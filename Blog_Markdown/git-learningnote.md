@@ -1,0 +1,4 @@
+- 简单使用的Git教程 https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000
+- 使用的软件 Git for Windows https://git-for-windows.github.io/
+- Git for Windows GUI教程 http://www.runoob.com/w3cnote/git-gui-window.html
+- OI GitHub https://github.com/xiazeyu/OI_Resource
