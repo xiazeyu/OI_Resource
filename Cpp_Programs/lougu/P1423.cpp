@@ -46,7 +46,15 @@ int main(){
 	freopen("test.out", "w", stdout);
 	#endif
 
-    double dis;
+    double dis, minu = 2.0f;
+    int cnt = 0;
+    cin>>dis;
+    while(dis >= 0){
+        dis -= minu;
+        minu *= 0.98;
+        cnt += 1;
+    }
+    cout<<cnt<<endl;
 
 
 	#ifndef OJ
