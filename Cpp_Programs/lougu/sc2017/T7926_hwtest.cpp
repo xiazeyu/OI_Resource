@@ -40,14 +40,11 @@ inline int qread(){ // 快速读入int - 返回 读入的数
 	return f * x;
 }
 
-inline int qpow( int a, int b ){
-    int r = 1, base = a;
-    while( b ){
-		if( b & 1 ) r *= base;
-        base *= base;
-        b >>= 1;
+bool ifhw( string t ){
+    for( int i = 1; i <= t.length() / 2; i++){
+        if(t.c_str()[i - 1] != t.c_str()[t.length() - i]) return false;
     }
-    return r;
+    return true;
 }
 
 int main(){
@@ -56,6 +53,10 @@ int main(){
 	freopen("test.out", "w", stdout);
 	#endif
 
+	string te;
+	cin >> te;
+	printf("len=%d\n", te.length());
+    if(ifhw(te)) cout << "true" << endl;
 
 
 	#ifndef OJ

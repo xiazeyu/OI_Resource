@@ -6,6 +6,7 @@
 #define pb push_back
 #define mp make_pair
 #define OJ
+#define mod 1000000007
 
 using namespace std;
 
@@ -40,15 +41,21 @@ inline int qread(){ // 快速读入int - 返回 读入的数
 	return f * x;
 }
 
-inline int qpow( int a, int b ){
-    int r = 1, base = a;
+
+inline ll int qpow ( ll int a, ll int b ){
+    ll int r = 1, base = a;
     while( b ){
 		if( b & 1 ) r *= base;
+		base %= mod;
         base *= base;
+        base %= mod;
         b >>= 1;
     }
     return r;
 }
+
+long int m, n;
+long int dat[200069] = {0};
 
 int main(){
 	#ifndef OJ
@@ -56,6 +63,55 @@ int main(){
 	freopen("test.out", "w", stdout);
 	#endif
 
+	scanf("%d %d", &n, &m);
+    for( long int i = 1; i <= n; i++ ){
+        scanf("%d", &dat[i]);
+    }
+    for( int i = 1; i <= m; i++ ){
+
+
+
+/*
+		printf("\n$");
+        for(int i = 1; i <= n; i++){
+            printf(" %d", dat[i]);
+        }printf("\n");
+
+*/
+
+
+
+
+
+
+
+
+
+		int ope, l, r, x;
+        scanf("%d %d %d %d",&ope, &l, &r, &x);
+        switch(ope){
+        	case(1):{
+                for(int i = l; i <= r; i++){
+                    dat[i] += x;
+                }
+        		break;
+			}
+			case(2):{
+                for(int i = l; i <= r; i++){
+                    dat[i] = x;
+                }
+                break;
+			}
+			case(3):{
+				ll int ans = 0;
+                for( int i = l; i <= r; i++ ){
+                    ans += qpow(dat[i], x);
+                }
+                printf("%ld\n", ans % mod);
+                break;
+			}
+        }
+    }
 
 
 	#ifndef OJ

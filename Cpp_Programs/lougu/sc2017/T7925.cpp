@@ -39,16 +39,13 @@ inline int qread(){ // 快速读入int - 返回 读入的数
 	while(isdigit(c)){x = x * 10 + c - '0'; c = getchar();}
 	return f * x;
 }
-
-inline int qpow( int a, int b ){
-    int r = 1, base = a;
-    while( b ){
-		if( b & 1 ) r *= base;
-        base *= base;
-        b >>= 1;
-    }
-    return r;
+/*
+inline ull int unsllmin(ull int a, ull int b){
+    return a > b ? b : a;
 }
+*/
+ull int n, m;
+ll int cnt = 0;
 
 int main(){
 	#ifndef OJ
@@ -56,6 +53,32 @@ int main(){
 	freopen("test.out", "w", stdout);
 	#endif
 
+
+    cin >> n >> m;
+    if ( n == 1 ){
+        cout << m << endl;
+        return 0;
+    }
+    while ( ( n > 1 ) && ( m > 1 ) ){
+        ull int t, rate = 1;
+        t = min( m, n ); // printf("t%lld\n", t);
+        if( n >= m ){
+            rate = n / t;
+            n -= t * rate;
+            cnt += rate;
+        }else{
+            rate = m / t;
+            m -= t * rate;
+            cnt += rate;
+        }// printf("%lld %lld\n", m, n);
+    }
+    if ( n == 1 ){
+        cnt += m;
+    }
+    if ( m == 1){
+        cnt += n;
+    }
+    cout << cnt << endl;
 
 
 	#ifndef OJ
