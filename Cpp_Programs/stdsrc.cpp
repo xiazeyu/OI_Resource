@@ -1,10 +1,7 @@
 #include <bits/stdc++.h>
 #define LuN 100069
 #define Inf 0x3f3f3f3f
-#define ll long long
-#define ull unsigned long long
-#define pb push_back
-#define mp make_pair
+#define eps 1e-8
 #define OJ
 
 using namespace std;
@@ -40,7 +37,7 @@ inline int qread(){ // 快速读入int - 返回 读入的数
 	return f * x;
 }
 
-inline int qpow( int a, int b ){
+inline int qpow( int a, int b ){ // 快速幂 - 返回 a ^ b
     int r = 1, base = a;
     while( b ){
 		if( b & 1 ) r *= base;
