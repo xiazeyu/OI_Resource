@@ -4,6 +4,10 @@
 #define eps 1e-8
 #define OJ
 
+// ans prefer long long int.
+// prefer global varible.
+// the index of a array is started from 0.
+
 using namespace std;
 
 inline int qmin(int a, int b){ // 位运算加速的求较小数 - 返回值 较小数
