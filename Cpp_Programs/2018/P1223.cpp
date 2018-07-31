@@ -1,34 +1,34 @@
-#include <cstdio>
-#include <algorithm>
+#include <bits/stdc++.h>
 
 using namespace std;
 
 struct person{
-  long int time;
-  long int no;
-  bool operator< (person const &a){ // HERE!!!!!
-    return time < a.time;
+  long time, order;
+  bool operator<(const person &b) const {
+    return time < b.time;
   }
 };
 
+long n;
+long long s = 0, sum = 0;
+vector<person> t;
+
 int main(){
-  long int n, t;
-  long long int s = 0, sum = 0; // HERE!!!!!!
-  person q[1024];
 
   scanf("%ld", &n);
-  for(long int i = 1; i <= n; i++){
-    scanf("%ld", &t);
-    q[i - 1].time = t;
-    q[i - 1].no = i;
+  t.resize(n + 4);
+  for(int i = 0; i < n; i++){
+    scanf("%ld", &t[i].time);
+    t[i].order = i + 1;
   }
-  sort(q, q + n);
-  for(int i = 1; i <= n; i++){
-    printf("%ld ", q[i - 1].no);
-    s += q[i - 1].time;
+  sort(t.begin(), t.begin() + n);
+  for(int i = 0; i < n; i++){
+    s += t[i].time;
     sum += s;
+    printf("%ld ", t[i].order);
   }
   printf("\n%.2lf", (sum - s) / (double)n);
+
 
   return 0;
 

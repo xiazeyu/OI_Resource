@@ -4,9 +4,22 @@
 #define eps 1e-8
 #define OJ
 
-// ans prefer long long int.
+// turn disorder into order
+
+// realize simplily
+// programming complexity > time complexity > space complexity
+// 1s = 4*10^8
+
+// ans prefer long long.
+// remove 0 in the front of a num-string, and check ans.length == 0.
+// define all varibles at the head.
 // prefer global varible.
-// the index of a array is started from 0.
+// the index of an array is started from 0.
+// the last index of an array is n-1.
+// search from both end, check if Begin == End.
+// avoid too long varible names.
+// prefer not to use function uncomplex codes.
+// STL [ , ).
 
 using namespace std;
 
