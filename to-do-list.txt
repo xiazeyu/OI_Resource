@@ -4,22 +4,25 @@ day2eg2
 day2eg3
 day2eg4
 day2eg5
+http://poj.org/problem?id=2349
+https://www.luogu.org/problemnew/show/UVA1476
+¶þ·Ö´ð°¸µÄÀýÌâ
 
-åŸºæœ¬è¯­æ³•
-äºŒåˆ†ç­”æ¡ˆ
-DPå…¥é—¨
-åŸºç¡€æ•°æ®ç»“æž„
-çº¿æ®µæ ‘
-æ ‘é“¾å‰–åˆ†
-æœç´¢
+»ù±¾Óï·¨
+¶þ·Ö´ð°¸
+DPÈëÃÅ
+»ù´¡Êý¾Ý½á¹¹
+Ïß¶ÎÊ÷
+Ê÷Á´ÆÊ·Ö
+ËÑË÷
 Tarjan
 LCA
-å¹¶æŸ¥é›†
+²¢²é¼¯
 
 
-å‘çˆ¹é¢˜
-æ¯”å¦‚ç³–æžœå…¬å›­
-åŽç¼€æ•°ç»„ç‰ˆçš„å–µæ˜Ÿäººçš„ç‚¹å
-æ”¯çº¿å‰§æƒ…
-æ‰è¿·è—
-å¼±åŒ–ç‰ˆçš„æ¶ˆè€—æˆ˜
+¿ÓµùÌâ
+±ÈÈçÌÇ¹û¹«Ô°
+ºó×ºÊý×é°æµÄß÷ÐÇÈËµÄµãÃû
+Ö§Ïß¾çÇé
+×½ÃÔ²Ø
+Èõ»¯°æµÄÏûºÄÕ½

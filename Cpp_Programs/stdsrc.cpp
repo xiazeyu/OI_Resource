@@ -7,9 +7,17 @@
 // turn disorder into order
 
 // realize simplily
-// programming complexity > time complexity > space complexity
-// 1s = 4*10^8
+// programming complexity > time complexity > space complexity.
+// leave comments!
+// optimize: reduce repeat workload.重叠子问题
+// 线段树 4倍空间
+// 1s = 4*10^8.
+// 128M, 1*10^7 long long 8bits
+// double 15
+// long double 18
 
+// See if input have repeat dataa.
+// See if input have more than one group: while(scanf != EOF)
 // ans prefer long long.
 // remove 0 in the front of a num-string, and check ans.length == 0.
 // define all varibles at the head.
@@ -17,6 +25,7 @@
 // the index of an array is started from 0.
 // the last index of an array is n-1.
 // search from both end, check if Begin == End.
+// use long double rather than double.
 // avoid too long varible names.
 // prefer not to use function uncomplex codes.
 // STL [ , ).
