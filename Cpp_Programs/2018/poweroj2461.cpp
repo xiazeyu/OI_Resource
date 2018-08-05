@@ -1,4 +1,5 @@
 // https://www.oj.swust.edu.cn/problem/show/2461
+// WARN: Multiple input cases
 
 #include <bits/stdc++.h>
 
@@ -18,7 +19,7 @@ bool check(long long q){
 
     long long l, r, mid, ans = 0;
 
-    while(scanf("%ld%ld%ld%ld%ld%ld%lld%ld%ld%ld", &a, &b, &c, &x, &y, &z, &sum, &c1, &c2, &c3) != EOF){
+    while(scanf("%ld%ld%ld%ld%ld%ld%lld%ld%ld%ld", &a, &b, &c, &x, &y, &z, &sum, &c1, &c2, &c3) != EOF){ // !!!!!
 
       l = 0;
       r = (sum / min(a * c1, min(b * c2, c * c3))) + (max(x / a, max(y / b, z / c))) + 16;

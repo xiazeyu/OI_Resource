@@ -1,59 +1,46 @@
+// https://www.luogu.org/problemnew/show/U28036
+// TODO: 一知半解; Q1
+
 #include <bits/stdc++.h>
 
 using namespace std;
 
-struct quest{
-  long order, x, y;
-  quest(long a, long b, long c){
-    order = a;
-    x = b;
-    y = c;
-  }
-  operator< (const quest &b) const {
-    if(x == b.x){
-      return y < b.y;
-    }
-    return x < b.x;
-  }
-};
+const int MOD = 998244353, calMax = 2018;
 
-long n, q, tx, ty, nowT = 0;
-vector<long long> a, ans, appendV, fina;
-vector<quest> qu;
+int cal[calMax][calMax] = {0}, n, q;
+long ans = 0, x, y;
+vector<int> a;
+
+void getCal(){
+  for(int i = 0; i < calMax; i++){
+    cal[i][0] = 1;
+  }
+  for(int i = 1; i < calMax; i++){
+    for(int j = 1; j <= i; j++){
+      cal[i][j] = (cal[i - 1][j] % MOD + cal[i - 1][j - 1] % MOD) % MOD;
+    }
+  }
+}
 
 int main(){
 
-  // 读入数据
-  scanf("%ld", &n);
+  getCal();
+  scanf("%d", &n);
   a.resize(n + 4);
-  fina.resize(n + 4);
-  for(long i = 1; i <= n; i++){
-    scanf("%lld", &a[i]);
+  for(int i = 1; i <= n; i++){
+    scanf("%d", &a[i]);
   }
-  fina = a;
-  scanf("%ld", &q);
-  ans.resize(q + 4);
-  for(long i = 0; i < q; i++){
-    scanf("%ld %ld", &tx, &ty);
-    qu.push_back(quest(i, tx, ty));
-  }
-  // 按x排序请求
-  sort(qu.begin(), qu.begin() + q);
-  // 模拟(优化?递推?), 按请求原先order顺序输出到ans数组中
-  for(long i = 0; i < q; i++){ // i为q的顺序
-    for(; qu[i].x > nowT; nowT++){
-      fina = a;
-      for(long k = 1; k < n; k++){
-        fina[k] %= 998244353;fina[k] += a[k + 1];fina[k] %= 998244353;
-      }
-      fina[n] %= 998244353;fina[n] += a[1];fina[n] %= 998244353;
-      a = fina;
+  scanf("%d", &q);
+  while(q--){
+    ans = 0;
+    scanf("%ld%ld", &x, &y);
+    for(long i = 0, j = y; i <= x; i++){
+      ans += ((1l) * cal[x][i] * a[j]) % MOD;
+      if (ans>=MOD) ans-=MOD; // Q1
+      j++;
+      if(j > n) j = 1;
     }
-    ans[qu[i].order] = a[qu[i].y];
-  }
-  // 输出ans数组
-  for(long i = 0; i < q; i++){
-    printf("%lld\n", ans[i]);
+    printf("%ld\n", ans);
   }
 
   return 0;

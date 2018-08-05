@@ -7,6 +7,7 @@ day2eg5
 http://poj.org/problem?id=2349
 https://www.luogu.org/problemnew/show/UVA1476
 二分答案的例题
+跳石头https://www.luogu.org/record/show?rid=9327192
 
 基本语法
 二分答案

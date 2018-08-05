@@ -16,7 +16,11 @@
 // double 15
 // long double 18
 
-// See if input have repeat dataa.
+// Rule #1: 区间[ , ) 二分答案时右区间至少+1 (@P2678)
+// Use the varible which actually limited as a end situation. @P2678
+// \n when use printf
+// ans += xxx % MOD; ans %= MOD;!!!!!
+// See if input have repeat datas.
 // See if input have more than one group: while(scanf != EOF)
 // ans prefer long long.
 // remove 0 in the front of a num-string, and check ans.length == 0.
@@ -28,7 +32,6 @@
 // use long double rather than double.
 // avoid too long varible names.
 // prefer not to use function uncomplex codes.
-// STL [ , ).
 
 using namespace std;
 
