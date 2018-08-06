@@ -1,8 +1,28 @@
 // 跳石头
 // https://www.luogu.org/problemnew/show/P2678
-// TODO: https://www.luogu.org/record/show?rid=9327192
+
+// TIP: 找出题目变化规律, 不变量 而不是简单模拟(#T1),
+// WARN: while 及 for 内部所有推出量均要考虑 是否溢出/越界(#2)
+//  用 for 而非 while(#3)
 // WARN: 区间左闭右开(#1)
 
+/*
+
+bool check(int dist)
+｛
+        int pre=0,cnt=0;
+        for(ini i=1;i<=n+1;i++)
+        {
+                 if(d[i]-pre<dist)cnt++;
+                 else pre=d[i];
+        }
+        if(cnt>m)return false;
+        else return true;
+｝
+d[n+1]存右岸的坐标，即L
+当前考察区间为[pre，d[i]]
+
+*/
 #include <bits/stdc++.h>
 
 using namespace std;

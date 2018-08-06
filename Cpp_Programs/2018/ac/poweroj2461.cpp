@@ -1,5 +1,7 @@
+// 2461: 入门基础之二分答案 组装机器人
 // https://www.oj.swust.edu.cn/problem/show/2461
-// WARN: Multiple input cases
+
+// WARN: Multiple input cases(#4)
 
 #include <bits/stdc++.h>
 
