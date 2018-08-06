@@ -1,13 +1,16 @@
-eg6
-eg7
-day2eg2
-day2eg3
-day2eg4
-day2eg5
+P1250
+P1248
+P1542
+P2440
+P1182
+P4058
+P1168
+P1230
+CodeVS1725
+http://acm.nyist.edu.cn/JudgeOnline/problem.php?pid=12
 http://poj.org/problem?id=2349
 https://www.luogu.org/problemnew/show/UVA1476
-二分答案的例题
-跳石头https://www.luogu.org/record/show?rid=9327192
+ch011105
 
 基本语法
 二分答案

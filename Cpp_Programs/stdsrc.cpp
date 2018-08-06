@@ -6,7 +6,10 @@
 
 // turn disorder into order
 
-// Tip #1: 找出题目变化规律, 不变量 而不是简单模拟(@P2678)
+// Tip #1: 找出题目变化规律, 不变量 而不是简单模拟 (@P2678)
+// Tip #2: 并查集操作时join为合并集合而不是元素 (@P3367)
+// Tip #3: 并查集在Find中路径压缩 (@P3367)
+// Tip #4: 区间问题注意左右端点 排序后考虑贪心 (@day2eg1选择不相交区间问题)
 // realize simplily
 // programming complexity > time complexity > space complexity.
 // leave comments!
@@ -22,7 +25,8 @@
 // Rule #3: 使用实际受限的变量作为循环变量, 推出其他变量 (@P2678)
 // Rule #4: 输入是否为 多组输入: while(scanf != EOF) (@poweroj2461)
 // Rule #5: 二分范围必须位于合法区间内 (@tvyj2359)
-// \n when use printf
+// Rule #6: 使用printf输出答案时注意 \n 回车 (@P3367)
+// Rule #7: 并查集操作时join为合并集合而不是元素 (@P3367)
 // ans += xxx % MOD; ans %= MOD;!!!!!
 // See if input have repeat datas.
 

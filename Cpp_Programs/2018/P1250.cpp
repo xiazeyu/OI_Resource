@@ -1,3 +1,6 @@
+// P1250 ÖÖÊ÷
+// https://www.luogu.org/problemnew/show/P1250
+
 #include <bits/stdc++.h>
 
 using namespace std;
