@@ -27,6 +27,7 @@
 // Rule #5: 二分范围必须位于合法区间内 (@tvyj2359)
 // Rule #6: 使用printf输出答案时注意 \n 回车 (@P3367)
 // Rule #7: 并查集操作时join为合并集合而不是元素 (@P3367)
+// Rule #8: 最小生成树 去重+去环 (@P3366PrimB)
 // ans += xxx % MOD; ans %= MOD;!!!!!
 // See if input have repeat datas.
 
