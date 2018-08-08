@@ -2,9 +2,9 @@
 // https://www.luogu.org/problemnew/show/P1991
 // http://poj.org/problem?id=2349
 
-// Status: CE
+// Status: AC on luogu, WA on POJ
 
-// Problem: line 46?
+// Problem: Heap
 
 #include <bits/stdc++.h>
 
@@ -42,9 +42,10 @@ int main(){
   mapY.resize(p + 1);
   for(long i = 1; i <= p; i++){
     scanf("%ld%ld", &mapX[i], &mapY[i]);
-    for(long j = i; i >= 1; j--){
+    for(long j = i; j >= 1; j--){
       long double tmp = sqrt(pow(abs(mapX[i] - mapX[j]), 2) + pow(abs(mapY[i] - mapY[j]), 2));
       if(i != j){
+        // cout<<"!"<<tmp<<endl;
         Edge[i].push_back(Node(j, tmp));
         Edge[j].push_back(Node(i, tmp));
       }
@@ -72,7 +73,7 @@ int main(){
     }
   }
 
-  for(long i = 1; i <= s; i++){
+  for(long i = 1; i < s; i++){
     MSTEdge.pop();
   }
 
