@@ -4,13 +4,14 @@
 #define eps 1e-8
 #define OJ
 
-// turn disorder into order
-
+// Tip #0: 尽可能简单实现
+// Tip #0.1: 将无序变为有序
 // Tip #1: 找出题目变化规律, 不变量 而不是简单模拟 (@P2678)
 // Tip #2: 并查集操作时join为合并集合而不是元素 (@P3367)
 // Tip #3: 并查集在Find中路径压缩 (@P3367)
 // Tip #4: 区间问题注意左右端点 排序后考虑贪心 (@day2eg1选择不相交区间问题)
-// realize simplily
+// Tip #5: 动态规划状态设计: 无后效性, 精简状态 复杂度太高 => 优化转移, 精简状态
+// Tip #6: 有后效性: 状态重新定义, 增加维度
 // programming complexity > time complexity > space complexity.
 // leave comments!
 // optimize: reduce repeat workload.重叠子问题
@@ -28,6 +29,8 @@
 // Rule #6: 使用printf输出答案时注意 \n 回车 (@P3367)
 // Rule #7: 并查集操作时join为合并集合而不是元素 (@P3367)
 // Rule #8: 最小生成树 去重+去环 (@P3366PrimB)
+// Rule #9: vector::size() == n => a的最后一个元素为a[n - 1] (@P2141)
+// Rule $10: 优先队列判连通性(队列是否为空 if(q.empty()) continue;) (@P3371D)
 // ans += xxx % MOD; ans %= MOD;!!!!!
 // See if input have repeat datas.
 
