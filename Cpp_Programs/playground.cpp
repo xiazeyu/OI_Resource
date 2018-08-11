@@ -2,19 +2,16 @@
 
 using namespace std;
 
-string t;
+priority_queue<long, vector<long>, greater<long> > q;
 
 int main(){
 
-  freopen("form.in", "r", stdin);
-  freopen("form.out", "w", stdout);
-
-  while(cin>>t){
-
-  }
-
-  fclose(stdin);
-  fclose(stdout);
+  q.push(1);
+  q.push(2);
+  cout<<q.top()<<endl;
+  q.pop();
+  cout<<q.top()<<endl;
+  q.pop();
 
   return 0;
 

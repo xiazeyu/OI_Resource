@@ -12,14 +12,13 @@
 // Tip #4: 区间问题注意左右端点 排序后考虑贪心 (@day2eg1选择不相交区间问题)
 // Tip #5: 动态规划状态设计: 无后效性, 精简状态 复杂度太高 => 优化转移, 精简状态
 // Tip #6: 有后效性: 状态重新定义, 增加维度
-// programming complexity > time complexity > space complexity.
-// leave comments!
-// optimize: reduce repeat workload.重叠子问题
+// Tip #7: 编程复杂度 > 时间复杂度 > 空间复杂度
+// Tip #8: 注释大法好
+// Tip #9: 优化重叠子问题
 // 线段树 4倍空间
-// 1s = 4*10^8.
-// 128M, 1*10^7 long long 8bits
-// double 15
-// long double 18
+// 1s = 4e8 条语句
+// 128M, 1e7 long long 8bits
+// double 读入输出, long double 计算
 
 // Rule #1: 区间[ , ) 二分答案时右区间至少+1 (@P2678)
 // Rule #2: while 及 for 内部所有推出量均要考虑 是否溢出/越界 (@P2678)
@@ -31,20 +30,19 @@
 // Rule #8: 最小生成树 去重+去环 (@P3366PrimB)
 // Rule #9: vector::size() == n => a的最后一个元素为a[n - 1] (@P2141)
 // Rule #10: 重边 自环 不连通 环 (优先队列是否为空 if(q.empty()) continue;) (@P3371D)
-// Rule #11: SPFA: 每次松弛最短路径上的一条边, 确定一个或多个点: while(!q.empty());dijkstra每次找一个点: for(long i = 1; i <= n; i++) (@P3371D)
-// ans += xxx % MOD; ans %= MOD;!!!!!
-// See if input have repeat datas.
+// Rule #11: SPFA: 每次松弛最短路径上的一条边, 确定一个或多个点: while(!q.empty());
+// Rule #11.1: Dijkstra: 每次找一个点: for(long i = 1; i <= n; i++)
+// Rule #11.2: SPFA 与 Dijkstra 代码差别: vis[] 意义不同, 循环终止条件不同, 寻找pos点不同 (@P3371D)
+// Rule #12: ans += xxx % MOD (由于是 += , 这里一定要取模); ans %= MOD; (@U28036)
+// Rule #13: 输入数据: 重复? 矛盾?
 
-// ans prefer long long.
-// remove 0 in the front of a num-string, and check ans.length == 0.
-// define all varibles at the head.
-// prefer global varible.
-// the index of an array is started from 0.
-// the last index of an array is n-1.
-// search from both end, check if Begin == End.
-// use long double rather than double.
-// avoid too long varible names.
-// prefer not to use function uncomplex codes.
+// ans 是否使用 long long, 高精度
+// string 存储 数字 输出时移除前导 0, 检查 ans.length == 0
+// 使用全局变量
+// array 是从 0 开始的
+// array 最后一位是 n-1
+// 两头搜索, 检查 Begin == End
+// 简单功能不使用 function
 
 using namespace std;
 
