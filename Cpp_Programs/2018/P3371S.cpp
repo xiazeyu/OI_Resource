@@ -3,6 +3,8 @@
 
 // Status:
 
+// SPFA аз╫с╠М
+
 // Problem:
 
 #include <bits/stdc++.h>

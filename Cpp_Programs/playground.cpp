@@ -2,11 +2,19 @@
 
 using namespace std;
 
+string t;
+
 int main(){
 
-  for(long i = 10; i <= 2; i++){
-    printf("123", EOF);
+  freopen("form.in", "r", stdin);
+  freopen("form.out", "w", stdout);
+
+  while(cin>>t){
+
   }
+
+  fclose(stdin);
+  fclose(stdout);
 
   return 0;
 

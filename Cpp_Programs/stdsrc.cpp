@@ -30,7 +30,8 @@
 // Rule #7: 并查集操作时join为合并集合而不是元素 (@P3367)
 // Rule #8: 最小生成树 去重+去环 (@P3366PrimB)
 // Rule #9: vector::size() == n => a的最后一个元素为a[n - 1] (@P2141)
-// Rule $10: 优先队列判连通性(队列是否为空 if(q.empty()) continue;) (@P3371D)
+// Rule #10: 重边 自环 不连通 环 (优先队列是否为空 if(q.empty()) continue;) (@P3371D)
+// Rule #11: SPFA: 每次松弛最短路径上的一条边, 确定一个或多个点: while(!q.empty());dijkstra每次找一个点: for(long i = 1; i <= n; i++) (@P3371D)
 // ans += xxx % MOD; ans %= MOD;!!!!!
 // See if input have repeat datas.
 

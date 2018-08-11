@@ -10,6 +10,7 @@ struct Node{
 };
 
 string tree;
+char t;
 long cnt, no = 0;
 // …Ó∂»
 stack<Node, vector<Node> > s;
@@ -21,10 +22,14 @@ bool r(char a){
 
 int main(){
   freopen("form.in", "r", stdin);
-  freopen("form.out",  "w", stdout);
+  freopen("form.out", "w", stdout);
 
-  while(cin>>tree){
-    if(tree == "()") break;
+  do{
+    t = getchar();
+    if(t != '\n')
+      tree = tree + t;
+  }while(t != '\n');
+  while(tree != "()"){
     no++;
     while(s.size()) s.pop();
     s.push(Node(-1, 0));
@@ -65,6 +70,12 @@ int main(){
     }else{
       cout<<no<<". "<<"false"<<endl;
     }
+    tree = "";
+    do{
+      t = getchar();
+      if(t != '\n')
+        tree = tree + t;
+    }while(t != '\n');
   }
 
   fclose(stdin);

@@ -1,0 +1,106 @@
+#include <bits/stdc++.h>
+#define LuN 100069
+#define Inf 0x3f3f3f3f
+#define eps 1e-8
+#define OJ
+
+// Tip #0: 尽可能简单实现
+// Tip #0.1: 将无序变为有序
+// Tip #1: 找出题目变化规律, 不变量 而不是简单模拟 (@P2678)
+// Tip #2: 并查集操作时join为合并集合而不是元素 (@P3367)
+// Tip #3: 并查集在Find中路径压缩 (@P3367)
+// Tip #4: 区间问题注意左右端点 排序后考虑贪心 (@day2eg1选择不相交区间问题)
+// Tip #5: 动态规划状态设计: 无后效性, 精简状态 复杂度太高 => 优化转移, 精简状态
+// Tip #6: 有后效性: 状态重新定义, 增加维度
+// programming complexity > time complexity > space complexity.
+// leave comments!
+// optimize: reduce repeat workload.重叠子问题
+// 线段树 4倍空间
+// 1s = 4*10^8.
+// 128M, 1*10^7 long long 8bits
+// double 15
+// long double 18
+
+// Rule #1: 区间[ , ) 二分答案时右区间至少+1 (@P2678)
+// Rule #2: while 及 for 内部所有推出量均要考虑 是否溢出/越界 (@P2678)
+// Rule #3: 使用实际受限的变量作为循环变量, 推出其他变量 (@P2678)
+// Rule #4: 输入是否为 多组输入: while(scanf != EOF) (@poweroj2461)
+// Rule #5: 二分范围必须位于合法区间内 (@tvyj2359)
+// Rule #6: 使用printf输出答案时注意 \n 回车 (@P3367)
+// Rule #7: 并查集操作时join为合并集合而不是元素 (@P3367)
+// Rule #8: 最小生成树 去重+去环 (@P3366PrimB)
+// Rule #9: vector::size() == n => a的最后一个元素为a[n - 1] (@P2141)
+// Rule #10: 重边 自环 不连通 环 (优先队列是否为空 if(q.empty()) continue;) (@P3371D)
+// Rule #11: SPFA: 每次松弛最短路径上的一条边, 确定一个或多个点: while(!q.empty());dijkstra每次找一个点: for(long i = 1; i <= n; i++) (@P3371D)
+// ans += xxx % MOD; ans %= MOD;!!!!!
+// See if input have repeat datas.
+
+// ans prefer long long.
+// remove 0 in the front of a num-string, and check ans.length == 0.
+// define all varibles at the head.
+// prefer global varible.
+// the index of an array is started from 0.
+// the last index of an array is n-1.
+// search from both end, check if Begin == End.
+// use long double rather than double.
+// avoid too long varible names.
+// prefer not to use function uncomplex codes.
+
+using namespace std;
+
+inline int qmin(int a, int b){ // 位运算加速的求较小数 - 返回值 较小数
+  int diff = b - a;
+  // b < a : a + (diff & -1)
+  // b > a : a + (diff & 0)
+  return a + (diff & (diff >> 31));
+}
+inline int qmax(int a, int b){ // 位运算加速的求较大数 - 返回值 较大数
+  int diff = b - a;
+  // b < a : b - (diff & -1)
+  // b > a : b - (diff & 0)
+  return b - (diff & (diff >> 31));
+}
+inline int qabs(int a){ // 位运算加速的绝对值  - 返回值 绝对值
+  int t = (a >> 31);
+  return (a + t) ^ t;
+}
+inline bool isOdd(int a){ // 判断奇偶性 - 返回 1 是奇数; 返回 0 是偶数
+  return (a & 1) == 1;
+}
+inline void qswap(int* a, int* b){ // 位运算加速的快速交换 - 用法 qswap(&a, &b);
+  (*a) ^= (*b) ^= (*a) ^= (*b);
+  return;
+}
+inline int qread(){ // 快速读入int - 返回 读入的数
+  char c = getchar();
+  int f = 1, x = 0;
+  while(!isdigit(c)){if(c == '-') f= -1; c = getchar();}
+  while(isdigit(c)){x = x * 10 + c - '0'; c = getchar();}
+  return f * x;
+}
+
+inline int qpow( int a, int b ){ // 快速幂 - 返回 a ^ b
+    int r = 1, base = a;
+    while( b ){
+    if( b & 1 ) r *= base;
+        base *= base;
+        b >>= 1;
+    }
+    return r;
+}
+
+int main(){
+  #ifndef OJ
+  freopen("test.in", "r", stdin);
+  freopen("test.out", "w", stdout);
+  #endif
+
+
+
+  #ifndef OJ
+  fclose(stdin);
+  fclose(stdout);
+  #endif
+  return 0;
+
+}
