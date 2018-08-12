@@ -35,6 +35,10 @@
 // Rule #11.2: SPFA 与 Dijkstra 代码差别: vis[] 意义不同, 循环终止条件不同, 寻找pos点不同 (@P3371D)
 // Rule #12: ans += xxx % MOD (由于是 += , 这里一定要取模); ans %= MOD; (@U28036)
 // Rule #13: 输入数据: 重复? 矛盾?
+// Rule #14: SPFA: dist 最大值为 0x3f3f3f3f, 小心溢出! (会dist + dist) (@3371F)
+// Rule #15: 0, 1不是素数 (@P3383)
+// Rule #17: Dijkstra 松弛时 (!vis[v]) 条件 (@P2384)
+// Rule #18: 邻接表记录pre后仍需 for Edge[pre[point]] 找边 (@2384)
 
 // ans 是否使用 long long, 高精度
 // string 存储 数字 输出时移除前导 0, 检查 ans.length == 0

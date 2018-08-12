@@ -1,18 +1,19 @@
-#include <bits/stdc++.h>
-
-using namespace std;
-
-priority_queue<long, vector<long>, greater<long> > q;
-
-int main(){
-
-  q.push(1);
-  q.push(2);
-  cout<<q.top()<<endl;
-  q.pop();
-  cout<<q.top()<<endl;
-  q.pop();
-
-  return 0;
-
+bool IsPrime[1000010];
+int Prim[1000010];
+int  euler_prime(int n){
+    int num = 0, j;
+    for(int i = 2; i <= n; i ++){
+        if(!IsPrime[i])
+            Prim[num ++] = i;
+        for(j  = 0; j < num; j ++){
+            if(i * Prim[j] > n)
+                break;
+            IsPrime[i * Prim[j]] = true;
+            if(i % Prim[j] == 0)
+                break;
+        }
+    }
+    //for(int i = 0; i < num; i ++){
+    //    cout << Prim[i] << endl;
+    //}
 }

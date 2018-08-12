@@ -54,7 +54,7 @@ int main(){
     do{
       pos = q.top().v;
       q.pop();
-    }while(vis[pos]);
+    }while((vis[pos]) && (!q.empty()));
     // х╬и╚
     vis[pos] = true;
     // киЁз
