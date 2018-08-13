@@ -33,13 +33,13 @@ priority_queue<Node, vector<Node> > q;
 int main(){
 
   scanf("%ld%ld", &n, &m);
-  Edge.resize(n + 8);
-  vis.resize(n + 8);
-  pre.resize(n + 8);
-  dist.resize(n + 8, maxL);
+  Edge.resize(n + 1);
+  vis.resize(n + 1);
+  pre.resize(n + 1);
+  dist.resize(n + 1, maxL);
   for(long i = 1; i <= m; i++){
     scanf("%ld%ld%ld", &x, &y, &z);
-    if((x != y) && (x >= 0) && (x <= n) && (y >= 0) && (y <- n))
+    if(x != y)
       Edge[x].push_back(Node(y, z));
   }
   dist[1] = 0;

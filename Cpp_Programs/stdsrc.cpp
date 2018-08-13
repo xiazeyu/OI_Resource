@@ -19,6 +19,9 @@
 // 1s = 4e8 条语句
 // 128M, 1e7 long long 8bits
 // double 读入输出, long double 计算
+// dfs: stack: 2MB, 10000 layers
+// bfs: 512MB, 很大了
+// cout<<sizeof(struct{all varibles.})<<endl;
 
 // Rule #1: 区间[ , ) 二分答案时右区间至少+1 (@P2678)
 // Rule #2: while 及 for 内部所有推出量均要考虑 是否溢出/越界 (@P2678)
@@ -36,17 +39,21 @@
 // Rule #12: ans += xxx % MOD (由于是 += , 这里一定要取模); ans %= MOD; (@U28036)
 // Rule #13: 输入数据: 重复? 矛盾?
 // Rule #14: SPFA: dist 最大值为 0x3f3f3f3f, 小心溢出! (会dist + dist) (@3371F)
-// Rule #15: 0, 1不是素数 (@P3383)
+// Rule #15: 0, 1不是素数, 也不是合数 (@P3383)
 // Rule #17: Dijkstra 松弛时 (!vis[v]) 条件 (@P2384)
 // Rule #18: 邻接表记录pre后仍需 for Edge[pre[point]] 找边 (@2384)
+// Rule #19: 递归, 递推 记忆法优化 (@1028)
+// Rule #20: 大, 已知长度数组不使用vector, 容易被卡常数 (@P1250GreedyArray)
 
+// 使用全局变量
 // ans 是否使用 long long, 高精度
 // string 存储 数字 输出时移除前导 0, 检查 ans.length == 0
-// 使用全局变量
 // array 是从 0 开始的
 // array 最后一位是 n-1
 // 两头搜索, 检查 Begin == End
 // 简单功能不使用 function
+// 循环第二个参数: 循环开始条件
+// for (int i = 0; i < count; i++)
 
 using namespace std;
 

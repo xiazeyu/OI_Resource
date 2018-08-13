@@ -18,9 +18,9 @@ int main(){
   scanf("%ld%ld", &n, &m);
   prime.resize(n + 1);
   vis.resize(n + 1);
-  for(long i = 2; i <= n; i++){
+  for(long i = 2; i <= n; i++){ // 枚举合数最大因子
     if(!vis[i]) prime[cnt++] = i; //不是目前找到的素数的倍数, 即找到素数
-    for(long j = 0; j < cnt && i * prime[j] <= n; j++){
+    for(long j = 0; j < cnt && i * prime[j] <= n; j++){// 最小因子与最大因子乘积必为合数, 筛去此数
       vis[i * prime[j]] = true; //找到的素数的倍数不再访问
       if(i % prime[j] == 0) break; // http://www.cnblogs.com/A-S-KirigiriKyoko/articles/6034572.html
     }
