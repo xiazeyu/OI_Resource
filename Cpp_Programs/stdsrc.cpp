@@ -81,6 +81,7 @@ inline void qswap(int* a, int* b){ // 位运算加速的快速交换 - 用法 qswap(&a, &b);
   return;
 }
 inline int qread(){ // 快速读入int - 返回 读入的数
+  // ios::sync_with_stdio(false); cin.tie(0);
   char c = getchar();
   int f = 1, x = 0;
   while(!isdigit(c)){if(c == '-') f= -1; c = getchar();}
@@ -104,12 +105,6 @@ int main(){
   freopen("test.out", "w", stdout);
   #endif
 
-
-
-  #ifndef OJ
-  fclose(stdin);
-  fclose(stdout);
-  #endif
   return 0;
 
 }

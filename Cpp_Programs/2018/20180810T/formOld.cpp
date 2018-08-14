@@ -3,41 +3,42 @@
 using namespace std;
 
 struct Node{
-  long d;
-  bool v;
+  long d, v;
   Node(long dep = 0, long value = false){
     d = dep; v = value;
   }
 };
 
-char t, pt;
+string tree;
 long cnt, no = 0;
 // 深度
 stack<Node, vector<Node> > s;
 
 bool r(char a){
-  return (a == 'T');
+  if(a == 'T') return true;
+  return false;
 }
 
 int main(){
-  while(1){
+
+  ios::sync_with_stdio(false);
+  cin.tie(0);
+
+  while(cin>>tree){
+    if(tree == "()") break;
     no++;
     while(s.size()) s.pop();
     s.push(Node(-1, 0));
     cnt = 0;
-    pt = 0;
-    t = 0;
-    while(t != '\n'){
-      pt = t;
-      t = getchar();
-      if((pt == '(') && (t == ')')) return 0;
-      if(t == '('){
+
+    for(long i = 0; i < tree.size(); i++){
+      if(tree[i] == '('){
         // 增加新节点的深度
         cnt++;
-        // cout<<"newDepth: "<<cnt<<"(from: "<<cnt - 1<<")"<<endl;
+        cout<<"newDepth: "<<cnt<<"(from: "<<cnt - 1<<")"<<endl;
         continue;
       }
-      if(t == ')'){
+      if(tree[i] == ')'){
         long dep = s.top().d;
         bool val = s.top().v;
         s.pop();
@@ -57,9 +58,8 @@ int main(){
         continue;
       }
       // else 入栈
-      if((t == 'T') || (t == 'F')) // check here is necessary
-        s.push(Node(cnt, r(t)));
-      // cout<<"pushNode: "<<cnt<<" "<<r(t)<<endl;
+      s.push(Node(cnt, r(tree[i])));
+      cout<<"pushNode: "<<cnt<<" "<<r(tree[i])<<endl;
     }
     if(s.top().v){
       cout<<no<<". "<<"true"<<endl;

@@ -58,9 +58,9 @@ int main(){
     // х╬и╚
     vis[pos] = true;
     // киЁз
-    for(long i = 0; i < Edge[pos].size(); i++){
-      long v = Edge[pos][i].v, w = Edge[pos][i].w;
-      if((!vis[v]) && (dist[v] > w + dist[pos])){
+    for(long j = 0; j < Edge[pos].size(); j++){
+      long v = Edge[pos][j].v, w = Edge[pos][j].w;
+      if((!vis[v]) && ((long long)dist[v] > (long long)w + (long long)dist[pos])){
         dist[v] = w + dist[pos];
         q.push(Node(v, dist[v]));
       }
