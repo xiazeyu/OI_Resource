@@ -3,6 +3,7 @@
 #define Inf 0x3f3f3f3f
 #define eps 1e-8
 #define OJ
+#define getd(n, w) ((n&(1<<w))>>w)
 
 // Tip #0: 尽可能简单实现
 // Tip #0.1: 将无序变为有序
@@ -44,6 +45,8 @@
 // Rule #18: 邻接表记录pre后仍需 for Edge[pre[point]] 找边 (@2384)
 // Rule #19: 递归, 递推 记忆法优化 (@1028)
 // Rule #20: 大, 已知长度数组不使用vector, 容易被卡常数 (@P1250GreedyArray)
+// Rule #21: 特殊判退出循环 (@P3383)
+// Rule #22: 审题: 哪个状态转移到哪个状态 (@P2730)
 
 // 使用全局变量
 // ans 是否使用 long long, 高精度
@@ -88,7 +91,6 @@ inline int qread(){ // 快速读入int - 返回 读入的数
   while(isdigit(c)){x = x * 10 + c - '0'; c = getchar();}
   return f * x;
 }
-
 inline int qpow( int a, int b ){ // 快速幂 - 返回 a ^ b
     int r = 1, base = a;
     while( b ){

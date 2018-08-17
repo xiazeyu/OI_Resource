@@ -1,10 +1,7 @@
-// P3383 【模板】线性筛素数
-// https://www.luogu.org/problemnew/show/P3383
+// AT807 素数、コンテスト、素数
+// https://www.luogu.org/problemnew/show/AT807
 
-// Status: 4ms-800ms, AC
-
-// WARN: 0, 1 不是素数 (#15)
-// WARN: 特殊判退出循环 (#21)
+// Status:
 
 #include <bits/stdc++.h>
 
@@ -12,11 +9,11 @@ using namespace std;
 
 vector<long> prime;
 vector<bool> vis;
-long n, m, t, cnt = 0;
+long n, t, cnt = 0;
 
 int main(){
 
-  scanf("%ld%ld", &n, &m);
+  n = 1000000;
   prime.resize(n + 1);
   vis.resize(n + 1);
   for(long i = 2; i <= n / 2; i++){ // 枚举合数最大因子, i <= n / 2时 Prime[] 不全, i <= n 时 Prime[]全
@@ -26,18 +23,11 @@ int main(){
       if(i % prime[j] == 0) break; // http://www.cnblogs.com/A-S-KirigiriKyoko/articles/6034572.html
     }
   }
-  for(long i = 1; i <= m; i++){
-    scanf("%ld", &t);
-    if((t == 0) || (t == 1)){
-      printf("No\n");
-      continue; // 特殊判退出循环
-    }
-    if(!vis[t])
-      printf("Yes\n");
-    else
-      printf("No\n");
-  }
-
+  scanf("%ld", &t);
+  if(!vis[t])
+    printf("YES\n");
+  else
+    printf("NO\n");
 
   /* // 埃拉托斯特尼筛法 O(nlglgn)
   for(long i = 2; i <= n; i++){
