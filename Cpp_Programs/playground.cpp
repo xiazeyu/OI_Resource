@@ -28,12 +28,7 @@ void putHash(long n){
 
 int main(){
 
-  long t;
-  while(1){
-  cin>>t;
-  cout<<inHash(t)<<endl;
-  putHash(t);
-  cout<<inHash(t)<<endl;
-  }
+  for(long i = 1; i <= 100; i++) cout<<i<<" "<<(i + 1) / 2<<" "<<i / 2 + 1<<endl;
 
+  return 0;
 }
