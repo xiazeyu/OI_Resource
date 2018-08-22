@@ -22,6 +22,7 @@
 // double 读入输出, long double 计算
 // dfs: stack: 2MB, 10000 layers
 // bfs: 512MB, 很大了
+// cin: 10e5
 // cout<<sizeof(struct{all varibles.})<<endl;
 
 // Rule #1: 区间[ , ) 二分答案时右区间至少+1 (@P2678)
@@ -38,7 +39,7 @@
 // Rule #11.1: Dijkstra: 每次找一个点: for(long i = 1; i <= n; i++)
 // Rule #11.2: SPFA 与 Dijkstra 代码差别: vis[] 意义不同, 循环终止条件不同, 寻找pos点不同 (@P3371D)
 // Rule #12: ans += xxx % MOD (由于是 += , 这里一定要取模); ans %= MOD; (@U28036)
-// Rule #13: 输入数据: 重复? 矛盾?
+// Rule #13: 输入数据: 重复? 矛盾? 给出2端点, 不一定满足a<=b, 手动排序 (@poj2777)
 // Rule #14: SPFA: dist 最大值为 0x3f3f3f3f, 小心溢出! (会dist + dist) (@3371F)
 // Rule #15: 0, 1不是素数, 也不是合数 (@P3383)
 // Rule #17: Dijkstra 松弛时 (!vis[v]) 条件 (@P2384)
@@ -48,6 +49,10 @@
 // Rule #21: 特殊判退出循环 (@P3383)
 // Rule #22: 审题: 哪个状态转移到哪个状态 (@P2730)
 // Rule #23: 复杂的二分, check函数可分三种情况讨论 (@P1168ss)
+// Rule #24: log2函数中, 注意最终求得为log(_n, 2)还是log(_n, 2) + 1 (while条件为 _n - 1) (@P3865)
+// Rule #25: 多组输入时当前的Case Number输出是否正常(不能while(t--)) (@hdu1166)
+// Rule #26: 线段树: 赋值(add()::是子集, pushDown())中, lazy 为最新的赋值操作本身, data 与lazy 应以对叶子节点的操作为准 (@poj2777)
+// Rule #27: bitset: 是否能直接使用count()? 是否会把超出范围的前导0一起记录? (@poj2777)
 
 // 使用全局变量
 // ans 是否使用 long long, 高精度
