@@ -53,10 +53,12 @@
 // Rule #25: 多组输入时当前的Case Number输出是否正常(不能while(t--)) (@hdu1166)
 // Rule #26: 线段树: 赋值(add()::是子集, pushDown())中, lazy 为最新的赋值操作本身, data 与lazy 应以对叶子节点的操作为准 (@poj2777)
 // Rule #27: bitset: 是否能直接使用count()? 是否会把超出范围的前导0一起记录? (@poj2777)
+// Rule #28: 读入整行string: getline(cin, str); (@P1598)
+// Rule #29: 分数反转要去前导0和后导0 (@P1553)
 
 // 使用全局变量
 // ans 是否使用 long long, 高精度
-// string 存储 数字 输出时移除前导 0, 检查 ans.length == 0
+// string 存储 数字 输出时 while(str[0] == '0') str = str.substr(1); if(!str.length()) str = '0' + str; (@P1106, @P1553)
 // array 是从 0 开始的
 // array 最后一位是 n-1
 // 两头搜索, 检查 Begin == End

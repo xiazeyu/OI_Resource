@@ -11,18 +11,18 @@
 using namespace std;
 
 vector<long> prime;
-vector<bool> vis;
+vector<bool> isPri;
 long n, m, t, cnt = 0;
 
 int main(){
 
   scanf("%ld%ld", &n, &m);
   prime.resize(n + 1);
-  vis.resize(n + 1);
+  isPri.resize(n + 1, true);
   for(long i = 2; i <= n / 2; i++){ // 枚举合数最大因子, i <= n / 2时 Prime[] 不全, i <= n 时 Prime[]全
-    if(!vis[i]) prime[cnt++] = i; //不是目前找到的素数的倍数, 即找到素数
+    if(isPri[i]) prime[cnt++] = i; //不是目前找到的素数的倍数, 即找到素数
     for(long j = 0; j < cnt && i * prime[j] <= n; j++){// 最小因子与最大因子乘积必为合数, 筛去此数
-      vis[i * prime[j]] = true; //找到的素数的倍数不再访问
+      isPri[i * prime[j]] = false; //找到的素数的倍数不再访问
       if(i % prime[j] == 0) break; // http://www.cnblogs.com/A-S-KirigiriKyoko/articles/6034572.html
     }
   }
@@ -32,7 +32,7 @@ int main(){
       printf("No\n");
       continue; // 特殊判退出循环
     }
-    if(!vis[t])
+    if(isPri[t])
       printf("Yes\n");
     else
       printf("No\n");
