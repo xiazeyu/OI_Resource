@@ -55,6 +55,7 @@
 // Rule #27: bitset: 是否能直接使用count()? 是否会把超出范围的前导0一起记录? (@poj2777)
 // Rule #28: 读入整行string: getline(cin, str); (@P1598)
 // Rule #29: 分数反转要去前导0和后导0 (@P1553)
+// Rule #30: %的运算: 防止出现负数, %MOD前+MOD (@20180828T_fibonacci)
 
 // 使用全局变量
 // ans 是否使用 long long, 高精度
