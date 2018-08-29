@@ -2,43 +2,52 @@
 
 using namespace std;
 
-struct item{
-  long x, w;
-  // x: 大小, w: 价值
-};
+bool en(long a, long b, long c){
+  bool n[10];
+  if((b < 100) || (b > 999)) return false;
+  if((c < 100) || (c > 999)) return false;
+  do{
+    n[a % 10] = true;
+    a /= 10;
 
-long n, m, ans = 0;
-item s[40];
 
-void DFS(long a, long b, long c){
-  // 阶段: 当前面对第a件物品
-  // 状态: 当前面对item[a]物品, 剩余b空间, 已获得c价值
-  // 状态转移: 取/不取
-  // 约束条件: 空间不足, 物品取完
-  if((a == n) || (s[a].x > b)){
-    ans = max(ans, c);
-    return;
-  }
-  DFS(a + 1, b, c);
-  DFS(a + 1, b - s[a].x, c + s[a].w);
-  return;
+    for(long i = 0; i <= 9; i++)
+    cout<<n[i]<<" ";
+  cout<<endl;
+
+
+  }while(a);
+
+
+
+  do{
+    if(n[b % 10]) return false;
+    n[b % 10] = true;
+    b /= 10;
+  }while(b);
+
+  for(long i = 0; i <= 9; i++)
+    cout<<n[i]<<" ";
+  cout<<endl;
+
+  do{
+    if(n[c % 10]) return false;
+    n[c % 10] = true;
+    c /= 10;
+  }while(c);
+
+  for(long i = 0; i <= 9; i++)
+    cout<<n[i]<<" ";
+  cout<<endl;
+
+  return true;
 }
 
 int main(){
 
-  // freopen("pack.in", "r", stdin);
-  // freopen("pack.out", "w", stdout);
-
-  scanf("%ld%ld", &n, &m);
-  for(long i = 0; i < n; i++){
-    scanf("%ld%ld", &s[i].x, &s[i].w);
-  }
-
-  DFS(1, m, 0);
-  if(s[0].x > m)
-    DFS(1, m - s[0].x, s[0].w);
-
-  printf("%ld\n", ans);
+  long a, b, c;
+  cin>>a>>b>>c;
+  en(a, b, c);
 
   return 0;
 
