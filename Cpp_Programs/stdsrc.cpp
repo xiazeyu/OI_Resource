@@ -28,7 +28,7 @@
 // Rule #1: 区间[ , ) 二分答案时右区间至少+1 (@P2678)
 // Rule #2: while 及 for 内部所有推出量均要考虑 是否溢出/越界 (@P2678)
 // Rule #3: 使用实际受限的变量作为循环变量, 推出其他变量 (@P2678)
-// Rule #4: 输入是否为 多组输入: while(scanf != EOF) (@poweroj2461)
+// Rule #4: 输入是否为 多组输入: while(~scanf) (@poweroj2461)
 // Rule #5: 二分范围必须位于合法区间内 (@tvyj2359)
 // Rule #6: 使用printf输出答案时注意 \n 回车 (@P3367)
 // Rule #7: 并查集操作时join为合并集合而不是元素 (@P3367)
@@ -60,6 +60,13 @@
 // Rule #32: 变量成比例: 必须要被整除 (@P1618)
 // Rule #33: DFS终止条件: 到达结果/越界 (@P2089)
 
+// 算法正确性
+// 爆空间? 爆时间? 越界访问?
+// vector先resize
+// 字符串getline(cin, str); cin.getline(str, sizeof(str));
+// 检查文件名 输入输出
+// 变量名下划线 首字母大写
+// 水 吃的
 // 使用全局变量
 // ans 是否使用 long long, 高精度
 // string 存储 数字 输出时 while(str[0] == '0') str = str.substr(1); if(!str.length()) str = '0' + str; (@P1106, @P1553)
